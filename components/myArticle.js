@@ -18,6 +18,23 @@ export default{
         l1:"First list item",
         l2:"Second list item with a longer description",
         l3:"Third list item to close it out",
+        p7:"And this is an ordered list:",
+        l4:"First list item",
+        l5:"Second list item with a longer description",
+        l6:"Third list item to close it out",
+        p8:"And this is a definiton list:",
+        dt:"HyperText Markup Language (HTML)",
+        dd:"The language used to describe and define the content of a Web page",
+        dt1:"Cascading Style Sheets (CSS)",
+        dd2:"Used to describe the appearance of Web content",
+        dt2:"JavaScript (JS)",
+        dd3:"The programming language used to build advanced Web sites and applications",
+        h3:"Inline HTML elements",
+        html:{
+            p9:"HTML defines a long list of available inline tags, a complete list of which can be found on the",
+            href:"https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+            p10:"Mozilla Developer Network"
+        },
         
     }]
 }
