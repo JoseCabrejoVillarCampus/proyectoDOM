@@ -3,7 +3,6 @@ import myBanner from "./components/myBanner.js";
 import myPosts from "./components/myPosts.js";
 import myAside from "./components/myAside.js";
 import myArticle from "./components/myArticle.js";
-/* import myArticle from "./components/myArticle.js"; */
 myHeader.listTitle();
 myHeader.listarItems();
 myBanner.showImage();
