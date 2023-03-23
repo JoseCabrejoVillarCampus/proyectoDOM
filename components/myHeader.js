@@ -55,7 +55,7 @@ export default{
         
     ],
     listTitle(){
-        document.querySelector("#title").insertAdjacentHTML("beforeend",`<a class="blog-header-logo text-dark" href="#" >${this.title.name}</a>`)
+        document.querySelector("#title").insertAdjacentHTML("beforeend",`<a class="blog-header-logo " href="#" >${this.title.name}</a>`)
     },
     listarItems(){
         let plantilla= "";

@@ -43,6 +43,17 @@ export default{
             name:"Continue Reading",
             href:"#"
         }
+      },
+      {
+        article:"Ping Pong Vintage",
+        title:`juego de Ping-Pong de principios del siglo XX comercializado por la empresa Parker Brothers `,
+        date:"Siglo XX",
+        paragraph:"Museo de los Niños de Indianápolis",
+        image:"img/Ping-Pong_2.jpg",
+        btn:{
+            name:"Continue Reading",
+            href:"#"
+        }
       }
       ],
     showPost(){

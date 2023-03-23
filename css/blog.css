@@ -1,4 +1,8 @@
 /* stylelint-disable selector-list-comma-newline-after */
+body{
+  background-color: #020f1f;
+  color: whitesmoke;
+}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -18,8 +22,9 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 2.25rem;
+  color: aqua;
 }
 
 .blog-header-logo:hover {
@@ -124,3 +129,79 @@ h1, h2, h3, h4, h5, h6 {
   height: 250px;
   object-fit: fill;
 }
+wrapper{
+  margin:0 auto;
+  width:600px;
+  height:300px;
+  border-bottom:30px solid #D0D102;
+}
+.clear{
+  clear:both;
+}
+.left_wall{
+  float:left;
+  width:30px;
+  height:100px;
+  background:#61AE24;
+  -webkit-animation:left-wall 3s infinite;
+  
+}
+.right_wall{
+  float:right;
+  width:30px;
+  height:100px;
+  background:#61AE24;
+  -webkit-animation:right-wall 3s infinite;
+  
+}
+.ball{
+  float:left;
+  width:50px;
+  height:50px;
+  background:#F18D05;
+  border-radius:50%;
+  margin-top:30px;
+  -webkit-animation:bounce_ball 3s linear infinite;
+}
+@-webkit-keyframes left-wall{
+  0% {margin-top:0px;}
+  25%{margin-top:200px}
+  100%{margin-top:0px}
+  
+}
+@-webkit-keyframes right-wall{
+  0% {margin-top:200px;}
+ 
+  50%{margin-top:0px}
+  100%{margin-top:200px}
+  
+}
+@-webkit-keyframes bounce_ball{
+  0% {margin-top:30px;}
+  25%{margin-left:250px;margin-top:252px}
+  50%{margin-left:490px;margin-top:30px;}
+  75%{margin-left:250px;margin-top:252px}
+  100%{margin-left:0px;margin-top:30px}
+  
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #a51d2d #62a0ea;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #62a0ea;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #a51d2d;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
