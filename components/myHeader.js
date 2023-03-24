@@ -55,12 +55,12 @@ export default{
         
     ],
     listTitle(){
-        document.querySelector("#title").insertAdjacentHTML("beforeend",`<a class="blog-header-logo " href="#" >${this.title.name}</a>`)
+        document.querySelector("#title").insertAdjacentHTML("beforeend",`<a class="blog-header-logo" >${this.title.name}</a>`)
     },
     listarItems(){
         let plantilla= "";
         this.pingPongItems.forEach((val, id) => {
-            plantilla += `<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`
+            plantilla += `<a class="head p-2 link-secondary" href="${val.href}">${val.name}</a>`
         });
         document.querySelector("#pingPongItems").insertAdjacentHTML("beforeend",plantilla);
     }

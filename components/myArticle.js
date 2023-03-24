@@ -1,61 +1,189 @@
 export default{
     article:[
         {
-            title:"From the Firehose"
+            title:"Tenis De Mesa",
+            date:"",
+            by:"",
+            paragraph:"",
+
         },
         {
-            title:"Sample blog post",
-            date:"January 1, 2021 by",
-            by:"Mark",
-            paragraph:"This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected. This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text."
+            title:"También Conocido como Ping-Pong o Pimpón",
+            date:"March 24, 2023 by",
+            by:"Jose Cabrejo",
+            paragraph:"Es un deporte de raqueta que se disputa entre dos jugadores o dos parejas (dobles). Es un deporte olímpico desde Seúl 1988, y el deporte con mayor número de practicantes, con 40 millones de jugadores compitiendo en todo el mundo.1​2​3​ Según un estudio realizado por la NASA, es el deporte más complicado que un ser humano puede practicar a nivel profesional.4​5​6​ Diversos estudios han demostrado que la práctica de este deporte mejora, entre otras, la capacidad y el tiempo de reacción, la coordinación ojo-mano, la concentración y la memoria. La regulación a nivel mundial de este deporte corre a cargo de la Federación Internacional de Tenis de Mesa (ITTF, por sus siglas en inglés), que agrupa a más de 200 organizaciones nacionales y 33 millones de federados a todos los niveles de competición, desde torneos de clubs hasta los campeonatos del mundo, que se celebran anualmente desde 1926 y bianualmente desde 1957, o el World Tour, un conjunto de torneos organizados por la ITTF que se celebran en todos los continentes y que reúne a los profesionales del más alto nivel. Nació en la década de 1870 en Inglaterra como una derivación del tenis. ",
         },
         {
-            title:"Blockquotes",
-            paragraph:"This is an example blockquote in action:"
+            title:"Incorporación de los países asiáticos",
+            date:"",
+            by:"",
+            paragraph:"El primer país asiático en frenar el dominio europeo fue Japón, que dominó los mundiales entre 1952 y 1957. Este dominio fue el reflejo de una incorporación técnica aportada por este país: la espuma. "
         },
         {
-            title:"Example lists",
+            title:"Condiciones de Juego",
+            date:"",
+            by:"",
             paragraph:"This is some additional paragraph placeholder content. It's a slightly shorter version of the other highlyrepetitive body text used throughout. This is an example unordered list:",
-            list:[
+            listar:[
                 {
-                    name:"First list item",
+                    name:"El espacio de juego será rectangular y no menor de 14 m de largo, 7 m de ancho y 5 m de alto.",
+                    href:"#",
                 },
                 {
-                    name:"Second list item with a longer description",
+                    name:"En competiciones por el título mundial u olímpico la intensidad luminosa, medida a la altura de la superficie de juego, deberá ser, como mínimo, de 1000 lux.",
+                    href:"#",
                 },
                 {
-                    name:"Third list item to close it out",
+                    name:"Cuando se juegue en varias mesas a la vez, el nivel de iluminación deberá ser el mismo para todas ellas. ",
+                    href:"#",
+                },
+                {
+                  name:"El fondo deberá ser, en general, oscuro y no podrá contener fuentes de luz brillante ni dejar pasar claridad a través de ventanas sin cubrir u otras aberturas.",
+                  href:"#",
+                },
+                {
+                  name:"El suelo no podrá ser de color claro, ni con brillo reflectante ni resbaladizo, y su superficie no podrá ser de ladrillo, cerámica, cemento o piedra. ",
+                  href:"#",
                 }
             ]
         },
         {
-            title:"Another blog post",
-            date:"December 23, 2020 by",
-            by:"Jacob",
-            paragraph:"This is some additional paragraph placeholder content. It has been written to fill the available space andshow how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text."
+            title:"Inicios",
+            date:"December 23, 2023 by",
+            by:"Jose Cabrejo",
+            paragraph:"Aunque a menudo se asocia el tenis de mesa con los países asiáticos, está ampliamente aceptado que este deporte nació en el último cuarto del siglo XIX en Inglaterra como una derivación del tenis. Es posible que jugadores de tenis ante la adversa climatología inventaran una especie de tenis en miniatura utilizando una mesa de billar o de comedor, en un club de tenis, y dividiéndola en dos campos con libros o simultáneamente con una cuerda. Como pelotas servirían algunos de los muchos modelos existentes para juegos infantiles, o incluso tapones de corcho convenientemente adaptados. Las raquetas serían tapas de cajas de puros o bates infantiles. Indudablemente se mezcla la leyenda con la realidad. Por esta versión se inclinan Gerald Gurney y Ron Crayden, dos profundos estudiosos en la historia del tenis de mesa. Los estudiantes universitarios adoptaron rápidamente el entonces juego de salón en toda Inglaterra. En 1884 la firma F. H. Ayres Ltd. (Frederick Henry Ayres) ya comercializaba un juego de tenis de salón en miniatura. El británico James Devonshire patenta, el 9 de octubre de 1885, su «Table Tennis», la primera vez de la que se tiene conocimiento en utilizar el término «tenis de mesa».11​ En julio de 1890, el industrial de Yorkshire David Forster, patentó un juego de mesa para sala, el cual consistía únicamente en una mesa rodeada con una especie de valla para mantener la pelota dentro de unos límites. No existen evidencias de su comercialización."
         },
-        {
-            title:"Example Table",
-            paragraph:"And don't forget about tables in these posts:"
-        }
-
     ],
     showArticle(){
-      this.article.forEach((val, id)=>{
-        if(val.date){
-          
-          document.querySelector("#firehouse").insertAdjacentHTML("beforeend",`
-        <h3 class="pb-4 mb-4 fst-italic border-bottom">
-              ${val.title}
-              </h3>
-          <article class="blog-post">
-          <h2 class="blog-post-title">${val.title}</h2>
-          <p class="blog-post-meta">${val.date}<a href="#">${val.by}</a></p>
-          <p>${val.paragraph}</p>
-        }
-      `
-      )
-      }});
+      const data = this.article.map((val, id)=>{
+          return (
+              (val.listar)
+              ? this.list(val)
+              : this.cards(val)
+          );
+      });
+      document.querySelector("#firehouse").insertAdjacentHTML("beforeend", data .join("")) 
+    },
+    cards(p1){
+        return `
+        <article class="blog-post">
+          <h2 class="blog-post-title">${p1.title}</h2>
+          <p class="blog-post-meta">${p1.date}<a href="#"> ${p1.by}</a></p>
+          <p>${p1.paragraph}</p>
+        `;
+    },
+    list(p1){
+        return`
+        <h3>${p1.title}</h3>
+          <p>${p1.paragraph}</p>
+          <ul>
+          ${p1.listar.map((val, id)=>`<li id="links"><a>${val.name}</a></li><br>`).join("")}
+          </ul>
+        `;
+    },
+    table:[
+      {
+        title:"CAMPEONES",
+        paragraph:"En la siguiente tabla se muestran los jugadores —hombres y mujeres— que han conseguido al menos cinco victorias individuales en sus participaciones en dichas competiciones: ",
+        name:"Ma Long",
+        victorias:"2008-2019",
+        jjoo:"4",
+        cdm:"2",
+        cm:"5",
+        total:"11",
+        name1:"Wang Nan",
+        victorias1:"1997-2007",
+        jjoo1:"3",
+        cdm1:"4",
+        cm1:"2",
+        total1:"9",
+        name2:"Liu Shiwen",
+        victorias2:"2009-2019",
+        jjoo2:"1",
+        cdm2:"5",
+        cm2:"3",
+        total2:"9",
+        name3:"Ding Ning",
+        victorias3:"2011-2018",
+        jjoo3:"4",
+        cdm3:"3",
+        cm3:"1",
+        total3:"8",
+        name4:"Deng Yaping",
+        victorias4:"1991-1997",
+        jjoo4:"5",
+        cdm4:"1",
+        cm4:"1",
+        total4:"7",
+      }
+    ],
+    showTable(){
+      this.table.forEach((val, id) => {
+        document.querySelector("#firehouse").insertAdjacentHTML("beforeend",`
+        <h3 class="cap">${val.title}</h3>
+            <p>${val.paragraph}</p>
+            <table class="table">
+              <thead class="text-center align-middle">
+                <tr>
+                  <th>NOMBRE</th>
+                  <th>AÑOS DE VICTORIAS</th>
+                  <th>JJOO</th>
+                  <th>COPAS DEL MUNDO</th>
+                  <th>CIRCUITO MUNDIAL</th>
+                  <th>TOTAL</th>
+                </tr>
+              </thead>
+              <tbody class="text-center align-middle">
+                <tr>
+                  <td>${val.name}</td>
+                  <td>${val.victorias}</td>
+                  <td>${val.jjoo}</td>
+                  <td>${val.cdm}</td>
+                  <td>${val.cm}</td>
+                  <td>${val.total}</td>
+                </tr>
+                <tr>
+                  <td>${val.name1}</td>
+                  <td>${val.victorias1}</td>
+                  <td>${val.jjoo1}</td>
+                  <td>${val.cdm1}</td>
+                  <td>${val.cm1}</td>
+                  <td>${val.total1}</td>
+                </tr>
+                <tr>
+                  <td>${val.name2}</td>
+                  <td>${val.victorias2}</td>
+                  <td>${val.jjoo2}</td>
+                  <td>${val.cdm2}</td>
+                  <td>${val.cm2}</td>
+                  <td>${val.total2}</td>
+                </tr>
+                <tr>
+                  <td>${val.name3}</td>
+                  <td>${val.victorias3}</td>
+                  <td>${val.jjoo3}</td>
+                  <td>${val.cdm3}</td>
+                  <td>${val.cm3}</td>
+                  <td>${val.total3}</td>
+                </tr>
+                <tr>
+                  <td>${val.name4}</td>
+                  <td>${val.victorias4}</td>
+                  <td>${val.jjoo4}</td>
+                  <td>${val.cdm4}</td>
+                  <td>${val.cm4}</td>
+                  <td>${val.total4}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-primary" href="#">Older</a>
+            <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+          </nav>
+        `)
+      });
+      
     }
 }
 /* -->

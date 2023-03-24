@@ -10,3 +10,4 @@ myBanner.showSectionBanner();
 myPosts.showPost();
 myAside.showAside();
 myArticle.showArticle();
+myArticle.showTable();
