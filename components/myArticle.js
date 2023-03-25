@@ -66,10 +66,10 @@ export default{
     },
     cards(p1){
         return `
-        <article class="blog-post">
+        <article class="blog-post mb-5">
           <h2 class="blog-post-title">${p1.title}</h2>
           <p class="blog-post-meta">${p1.date}<a href="#"> ${p1.by}</a></p>
-          <p>${p1.paragraph}</p>
+          <p>${p1.paragraph}</p><hr/>
         `;
     },
     list(p1){
@@ -85,44 +85,71 @@ export default{
       {
         title:"CAMPEONES",
         paragraph:"En la siguiente tabla se muestran los jugadores —hombres y mujeres— que han conseguido al menos cinco victorias individuales en sus participaciones en dichas competiciones: ",
-        name:"Ma Long",
-        victorias:"2008-2019",
-        jjoo:"4",
-        cdm:"2",
-        cm:"5",
-        total:"11",
-        name1:"Wang Nan",
-        victorias1:"1997-2007",
-        jjoo1:"3",
-        cdm1:"4",
-        cm1:"2",
-        total1:"9",
-        name2:"Liu Shiwen",
-        victorias2:"2009-2019",
-        jjoo2:"1",
-        cdm2:"5",
-        cm2:"3",
-        total2:"9",
-        name3:"Ding Ning",
-        victorias3:"2011-2018",
-        jjoo3:"4",
-        cdm3:"3",
-        cm3:"1",
-        total3:"8",
-        name4:"Deng Yaping",
-        victorias4:"1991-1997",
-        jjoo4:"5",
-        cdm4:"1",
-        cm4:"1",
-        total4:"7",
+        camp:[
+          {
+            name:"Ma Long",
+            victorias:"2008-2019",
+            jjoo:"4",
+            cdm:"2",
+            cm:"5",
+            total:"11"
+          },
+          {
+            name:"Wang Nan",
+            victorias:"1997-2007",
+            jjoo:"3",
+            cdm:"4",
+            cm:"2",
+            total:"9"
+          },
+          {
+            name:"Liu Shiwen",
+            victorias:"2009-2019",
+            jjoo:"1",
+            cdm:"5",
+            cm:"3",
+            total:"9"
+          },
+          {
+            name:"Ding Ning",
+            victorias:"2011-2018",
+            jjoo:"4",
+            cdm:"3",
+            cm:"1",
+            total:"8",
+          },
+          {
+            name:"Deng Yaping",
+            victorias:"1991-1997",
+            jjoo:"5",
+            cdm:"1",
+            cm:"1",
+            total:"7"
+          }
+        ]
       }
     ],
     showTable(){
-      this.table.forEach((val, id) => {
-        document.querySelector("#firehouse").insertAdjacentHTML("beforeend",`
-        <h3 class="cap">${val.title}</h3>
-            <p>${val.paragraph}</p>
-            <table class="table">
+      const data = this.table.map((val, id)=>{
+          return (
+              (val.camp)
+              ? this.list1(val)
+              : this.cards1(val)
+          );
+      });
+      document.querySelector("#firehouse").insertAdjacentHTML("beforeend", data .join("")) 
+    },
+    cards1(p1){
+        return `
+        <h3 class="cap">${p1.title}</h3>
+            <p>${p1.paragraph}</p>
+        `;
+    },
+    list1(p1){
+        return`
+        <h3 class="cap">${p1.title}</h3>
+        <p>${p1.paragraph}</p>
+        <table class="table">
               <thead class="text-center align-middle">
                 <tr>
                   <th>NOMBRE</th>
@@ -134,45 +161,13 @@ export default{
                 </tr>
               </thead>
               <tbody class="text-center align-middle">
-                <tr>
-                  <td>${val.name}</td>
-                  <td>${val.victorias}</td>
-                  <td>${val.jjoo}</td>
-                  <td>${val.cdm}</td>
-                  <td>${val.cm}</td>
-                  <td>${val.total}</td>
-                </tr>
-                <tr>
-                  <td>${val.name1}</td>
-                  <td>${val.victorias1}</td>
-                  <td>${val.jjoo1}</td>
-                  <td>${val.cdm1}</td>
-                  <td>${val.cm1}</td>
-                  <td>${val.total1}</td>
-                </tr>
-                <tr>
-                  <td>${val.name2}</td>
-                  <td>${val.victorias2}</td>
-                  <td>${val.jjoo2}</td>
-                  <td>${val.cdm2}</td>
-                  <td>${val.cm2}</td>
-                  <td>${val.total2}</td>
-                </tr>
-                <tr>
-                  <td>${val.name3}</td>
-                  <td>${val.victorias3}</td>
-                  <td>${val.jjoo3}</td>
-                  <td>${val.cdm3}</td>
-                  <td>${val.cm3}</td>
-                  <td>${val.total3}</td>
-                </tr>
-                <tr>
-                  <td>${val.name4}</td>
-                  <td>${val.victorias4}</td>
-                  <td>${val.jjoo4}</td>
-                  <td>${val.cdm4}</td>
-                  <td>${val.cm4}</td>
-                  <td>${val.total4}</td>
+                <tr></tr>
+                  <td class="text-center align-middle w-25"><hr/>${p1.camp.map((val, id)=>`${val.name}<hr/>`).join("")}</td>
+                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.victorias}<hr/>`).join("")}</td>
+                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.jjoo}<hr/>`).join("")}</td>
+                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.cdm}<hr/>`).join("")}</td>
+                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.cm}<hr/>`).join("")}</td>
+                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.total}<hr/>`).join("")}</td>
                 </tr>
               </tbody>
             </table>
@@ -181,10 +176,8 @@ export default{
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
           </nav>
-        `)
-      });
-      
-    }
+        `;
+    },
 }
 /* -->
  */
