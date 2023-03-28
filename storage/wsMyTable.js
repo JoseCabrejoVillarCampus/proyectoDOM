@@ -32,7 +32,7 @@ let wsMyTable={
                 </thead>
                 <tbody class="text-center align-middle">
                 <tr>
-                    <td class="text-center align-middle w-25"><hr/>$${p1.camp.map((val, id)=>`${val.name}<hr/>`).join(" ")}</td>
+                    <td class="text-center align-middle w-25"><hr/>${p1.camp.map((val, id)=>`${val.name}<hr/>`).join(" ")}</td>
                     <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.victorias}<hr/>`).join(" ")}</td>
                     <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.jjoo}<hr/>`).join(" ")}</td>
                     <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.cdm}<hr/>`).join(" ")}</td>

@@ -9,7 +9,7 @@ myHeader.show();
 myBanner.showImage();
 myBanner.show();
 myAside.show();
-myPosts.showPost();
+myPosts.show();
 myArticle.show();
 myFooter.show();
 myTable.show();
