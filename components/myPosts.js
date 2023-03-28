@@ -46,9 +46,9 @@ export default{
       },
       {
         article:"Ping Pong Vintage",
-        title:`juego de Ping-Pong de principios del siglo XX comercializado por la empresa Parker Brothers `,
+        title:`juego de Ping-Pong de principios del siglo XX`,
         date:"Siglo XX",
-        paragraph:"Museo de los Niños de Indianápolis",
+        paragraph:"Museo de los Niños de Indianápolis, comercializado por la empresa Parker Brothers",
         image:"img/Ping-Pong_2.jpg",
         btn:{
             name:"Continue Reading",
@@ -65,7 +65,7 @@ export default{
                     <strong class="d-inline-block mb-2 text-primary">${val.article}</strong>
                     <h3 class="mb-0">${val.title}</h3>
                     <div class="mb-1 text-muted">${val.date}</div>
-                    <p class="card-text mb-auto">${val.paragraph.substring(0,88)}</p>
+                    <p class="card-text mb-auto">${val.paragraph.substring(0,60)}</p>
                     <a href="${val.btn.href}" class="stretched-link">${val.btn.name}</a>
                   </div>
                   <div class="col-auto d-none d-lg-block">

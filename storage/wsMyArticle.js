@@ -13,7 +13,7 @@ let wsMyArticle={
           return `<div>${article.map((val, id)=>`<article class="blog-post mb-5">
             <h2 class="blog-post-title">${val.title}</h2>
             <p class="blog-post-meta">${val.date}<a href="#"> ${val.by}</a></p>
-            <p>${val.paragraph}</p><hr>`).join("")}</div>`.join()
+            <p>${val.paragraph}</p><hr>`).join("")}</div>`
       },
       list(p1){
           return`<h3>${p1.title}</h3>

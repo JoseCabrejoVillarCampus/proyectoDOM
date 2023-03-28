@@ -1,61 +1,10 @@
+import config from "../storage/config.js";
 export default{
-    title: {
-        name:"PING PONG",
-        href:"#"
-    },
-    pingPongItems:[
-        {
-            name:"Historia",
-            href:"#"
-        },
-        {
-            name:"Inicios",
-            href:"#"
-        },
-        {
-            name:"Internacionalización",
-            href:"#"
-        },
-        {
-            name:"Reglamentación",
-            href:"#"
-        },
-        {
-            name:"La Escuela",
-            href:"#"
-        },
-        {
-            name:"Deporte Olímpico",
-            href:"#"
-        },
-        {
-            name:"La Mesa",
-            href:"#"
-        },
-        {
-            name:"La Pelota",
-            href:"#"
-        },
-        {
-            name:"La Raqueta",
-            href:"#"
-        },
-        {
-            name:"El Partido",
-            href:"#"
-        },
-        {
-            name:"El Servicio",
-            href:"#"
-        },
-        {
-            name:"Vestimenta",
-            href:"#"
-        },
-        
-    ],
-    
     show(){
+
+        config.dataMyHeader();
+        Object.assign(this, JSON.parse(localStorage.getItem("myHeader")));
+        
         // creamos el worker
         const ws = new Worker("storage/wsMyHeader.js",{type:"module"});
 

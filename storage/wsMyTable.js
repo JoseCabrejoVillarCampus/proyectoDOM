@@ -49,3 +49,6 @@ let wsMyTable={
         `;
     },
 }
+self.addEventListener("message",(e)=>{
+    postMessage(wsMyTable[`${e.data.module}`](e.data.data));
+})
