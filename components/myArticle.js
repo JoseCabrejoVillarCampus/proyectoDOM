@@ -4,7 +4,7 @@ export default{
             title:"Tenis De Mesa",
             date:"",
             by:"",
-            paragraph:"",
+            paragraph:""
 
         },
         {
@@ -52,35 +52,8 @@ export default{
             date:"December 23, 2023 by",
             by:"Jose Cabrejo",
             paragraph:"Aunque a menudo se asocia el tenis de mesa con los países asiáticos, está ampliamente aceptado que este deporte nació en el último cuarto del siglo XIX en Inglaterra como una derivación del tenis. Es posible que jugadores de tenis ante la adversa climatología inventaran una especie de tenis en miniatura utilizando una mesa de billar o de comedor, en un club de tenis, y dividiéndola en dos campos con libros o simultáneamente con una cuerda. Como pelotas servirían algunos de los muchos modelos existentes para juegos infantiles, o incluso tapones de corcho convenientemente adaptados. Las raquetas serían tapas de cajas de puros o bates infantiles. Indudablemente se mezcla la leyenda con la realidad. Por esta versión se inclinan Gerald Gurney y Ron Crayden, dos profundos estudiosos en la historia del tenis de mesa. Los estudiantes universitarios adoptaron rápidamente el entonces juego de salón en toda Inglaterra. En 1884 la firma F. H. Ayres Ltd. (Frederick Henry Ayres) ya comercializaba un juego de tenis de salón en miniatura. El británico James Devonshire patenta, el 9 de octubre de 1885, su «Table Tennis», la primera vez de la que se tiene conocimiento en utilizar el término «tenis de mesa».11​ En julio de 1890, el industrial de Yorkshire David Forster, patentó un juego de mesa para sala, el cual consistía únicamente en una mesa rodeada con una especie de valla para mantener la pelota dentro de unos límites. No existen evidencias de su comercialización."
-        },
+        }
     ],
-    showArticle(){
-      const data = this.article.map((val, id)=>{
-          return (
-              (val.listar)
-              ? this.list(val)
-              : this.cards(val)
-          );
-      });
-      document.querySelector("#firehouse").insertAdjacentHTML("beforeend", data .join("")) 
-    },
-    cards(p1){
-        return `
-        <article class="blog-post mb-5">
-          <h2 class="blog-post-title">${p1.title}</h2>
-          <p class="blog-post-meta">${p1.date}<a href="#"> ${p1.by}</a></p>
-          <p>${p1.paragraph}</p><hr/>
-        `;
-    },
-    list(p1){
-        return`
-        <h3>${p1.title}</h3>
-          <p>${p1.paragraph}</p>
-          <ul>
-          ${p1.listar.map((val, id)=>`<li id="links"><a>${val.name}</a></li><br>`).join("")}
-          </ul>
-        `;
-    },
     table:[
       {
         title:"CAMPEONES",
@@ -129,53 +102,29 @@ export default{
         ]
       }
     ],
-    showTable(){
-      const data = this.table.map((val, id)=>{
-          return (
-              (val.camp)
-              ? this.list1(val)
-              : this.cards1(val)
-          );
-      });
-      document.querySelector("#firehouse").insertAdjacentHTML("beforeend", data .join("")) 
-    },
-    cards1(p1){
-        return `
-        <h3 class="cap">${p1.title}</h3>
-            <p>${p1.paragraph}</p>
-        `;
-    },
-    list1(p1){
-        return`
-        <h3 class="cap">${p1.title}</h3>
-        <p>${p1.paragraph}</p>
-        <table class="table">
-              <thead class="text-center align-middle">
-                <tr>
-                  <th>NOMBRE</th>
-                  <th>AÑOS DE VICTORIAS</th>
-                  <th>JJOO</th>
-                  <th>COPAS DEL MUNDO</th>
-                  <th>CIRCUITO MUNDIAL</th>
-                  <th>TOTAL</th>
-                </tr>
-              </thead>
-              <tbody class="text-center align-middle">
-                <tr></tr>
-                  <td class="text-center align-middle w-25"><hr/>${p1.camp.map((val, id)=>`${val.name}<hr/>`).join("")}</td>
-                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.victorias}<hr/>`).join("")}</td>
-                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.jjoo}<hr/>`).join("")}</td>
-                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.cdm}<hr/>`).join("")}</td>
-                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.cm}<hr/>`).join("")}</td>
-                  <td class="text-center align-middle"><hr/>${p1.camp.map((val, id)=>`${val.total}<hr/>`).join("")}</td>
-                </tr>
-              </tbody>
-            </table>
+    show(){
+        const ws = new Worker("storage/wsMyArticle.js",{type:"module"});
 
-            <nav class="blog-pagination" aria-label="Pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-          </nav>
-        `;
-    },
+        //enviamos un mensaje el worker
+        ws.postMessage({module: "showArticle", data : this.article});
+        ws.postMessage({module: "cards", data : this.article});
+        ws.postMessage({module: "list", data : this.article});
+        ws.postMessage({module: "showTable", data : this.table});
+        ws.postMessage({module: "cards", data : this.table});
+        ws.postMessage({module: "list", data : this.table});
+        let id = ["#firehouse"];
+        let count = 0;
+        //esto es lo que llega del worker
+        ws.addEventListener("message",(e)=>{
+
+            //estamos parseando lo que trae el evento (mensaje)
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+            
+            //insertamos en nuestro index, en el selector #pingPongItems
+            document.querySelector(id[count]).append(...doc.body.children);
+
+            //finalizamos el worker
+            (id.length-1==count) ? ws.terminate():count++;
+        });
+    }
 }

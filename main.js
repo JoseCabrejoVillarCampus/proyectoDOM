@@ -9,6 +9,5 @@ myBanner.showImage();
 myBanner.show();
 myAside.show();
 myPosts.showPost();
-myArticle.showArticle();
-myArticle.showTable();
+myArticle.show();
 myFooter.showFooter();

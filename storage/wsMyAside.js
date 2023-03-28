@@ -1,12 +1,13 @@
 let wsMyAside={
-    showAside(p1){
-        const data = this.nav.map((val, id)=>{
+    showAside(nav){
+        const data = nav.map((val, id)=>{
             return (
                 (val,id)
                 ? this.list(val)
                 : this.cards(val)
             );
         });
+        return data;
     },
     cards(p1){
         return `
