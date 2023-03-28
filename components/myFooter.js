@@ -11,15 +11,24 @@ export default{
             href4:""
         }
     ],
-    showFooter(){
-        this.foot.forEach((val, id) =>{
-            document.querySelector("#footer").insertAdjacentHTML("beforeend",`
-                <p>${val.paragraph} <a href=${val.href}>${val.paragraph2}</a> by <a
-                href=${val.href2}>${val.paragraph3}</a>.</p>
-                <p>
-                <a href="#">${val.paragraph4}</a>
-                </p>
-                `)
+    show(){
+        const ws = new Worker("storage/wsMyFooter.js",{type:"module"});
+
+        //enviamos un mensaje el worker
+        ws.postMessage({module: "showFooter", data : this.foot});
+        let id = ["#footer"];
+        let count = 0;
+        //esto es lo que llega del worker
+        ws.addEventListener("message",(e)=>{
+
+            //estamos parseando lo que trae el evento (mensaje)
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+            
+            //insertamos en nuestro index, en el selector #pingPongItems
+            document.querySelector(id[count]).append(...doc.body.children);
+
+            //finalizamos el worker
+            (id.length-1==count) ? ws.terminate():count++;
         });
     }
 }

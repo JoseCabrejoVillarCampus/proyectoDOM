@@ -22,7 +22,7 @@ let wsMyAside={
         <div class="p-4">
             <h4 class="titleaside fst-italic">${p1.title}</h4>
             <ol class="list-unstyled mb-0">
-              ${p1.link.map((val, id)=>`<li ><a class="lis" href="${val.href}">${val.name}</a></li>`).join("")}
+              ${p1.link.map((val, id)=>`<li ><a class="lis" href="${val.href}">${val.name}</a></li>`).join(" ")}
             </ol>
           </div>
         `;
