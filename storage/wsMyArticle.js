@@ -7,18 +7,19 @@ let wsMyArticle={
                 : this.cards(val)
             );
         });
-        return data; 
+        /* console.log(data.join("")); */
+        return data.join(""); 
       },
-      cards(article){
-          return `<div>${article.map((val, id)=>`<article class="blog-post mb-5">
-            <h2 class="blog-post-title">${val.title}</h2>
-            <p class="blog-post-meta">${val.date}<a href="#"> ${val.by}</a></p>
-            <p>${val.paragraph}</p><hr>`).join("")}</div>`
+      cards(p1){
+          return `<div ><article class="blog-post my-4 lh-lg">
+            <h2 class="blog-post-title">${p1.title}</h2>
+            <p class="blog-post-meta">${p1.date}<a href="#">  ${p1.by}</a></p>
+            <p>${p1.paragraph}</p><hr></div>`
       },
       list(p1){
           return`<h3>${p1.title}</h3>
             <p>${p1.paragraph}</p>
-            <ul>${p1.listar.map((val, id)=>`<li id="links"><a>${val.name}</a></li><br>`).join("")}</ul>`;
+            <ul>${p1.listar.map((val, id)=>`<li id="links"><a >${val.name}</a></li><br></ul>`)}`;
       },
     
 }

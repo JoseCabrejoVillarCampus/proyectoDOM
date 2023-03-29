@@ -63,7 +63,7 @@ export default{
         localStorage.setItem("myArticle", JSON.stringify({
             article:[
                 {
-                    title:"Tenis De Mesa",
+                    title:"El Tenis De Mesa",
                     date:"",
                     by:"",
                     paragraph:""
@@ -85,7 +85,7 @@ export default{
                     title:"Condiciones de Juego",
                     date:"",
                     by:"",
-                    paragraph:"This is some additional paragraph placeholder content. It's a slightly shorter version of the other highlyrepetitive body text used throughout. This is an example unordered list:",
+                    paragraph:"Estas son algunas de las condiciones de juego a tener en cuenta:",
                     listar:[
                         {
                             name:"El espacio de juego será rectangular y no menor de 14 m de largo, 7 m de ancho y 5 m de alto.",
@@ -296,47 +296,56 @@ export default{
                 {
                   title:"CAMPEONES",
                   paragraph:"En la siguiente tabla se muestran los jugadores —hombres y mujeres— que han conseguido al menos cinco victorias individuales en sus participaciones en dichas competiciones: ",
-                  camp:[
-                    {
-                      name:"Ma Long",
-                      victorias:"2008-2019",
-                      jjoo:"4",
-                      cdm:"2",
-                      cm:"5",
-                      total:"11"
+                  camp:[{
+                    titulos:[
+                        {name:"NOMBRE"},
+                        {name:"AÑOS DE VICTORIAS"},
+                        {name:"JJOO"},
+                        {name:"COPAS DEL MUNDO"},
+                        {name:"CIRCUITO MUNDIAL"},
+                        {name:"TOTAL"},
+                    ],
+                    primer:[
+                        {name:"Ma Long"},
+                        {name:"2008-2019"},
+                        {name:"4"},
+                        {name:"2"},
+                        {name:"5"},
+                        {name:"11"},
+                    ],
+                    segundo:[
+                        {name:"Wang Nan"},
+                        {name:"1997-2007"},
+                        {name:"3"},
+                        {name:"4"},
+                        {name:"2"},
+                        {name:"9"},
+                    ],
+                    tercero:[
+                        {name:"Liu Shiwen"},
+                        {name:"2009-2019"},
+                        {name:"1"},
+                        {name:"5"},
+                        {name:"3"},
+                        {name:"9"},
+                    ],
+                    cuarto:[
+                        {name:"Ding Ning"},
+                        {name:"2011-2018"},
+                        {name:"4"},
+                        {name:"3"},
+                        {name:"1"},
+                        {name:"8"},
+                    ],
+                    quinto:[
+                        {name:"Deng Yaping"},
+                        {name:"1991-1997"},
+                        {name:"5"},
+                        {name:"1"},
+                        {name:"1"},
+                        {name:"7"},
+                    ],
                     },
-                    {
-                      name:"Wang Nan",
-                      victorias:"1997-2007",
-                      jjoo:"3",
-                      cdm:"4",
-                      cm:"2",
-                      total:"9"
-                    },
-                    {
-                      name:"Liu Shiwen",
-                      victorias:"2009-2019",
-                      jjoo:"1",
-                      cdm:"5",
-                      cm:"3",
-                      total:"9"
-                    },
-                    {
-                      name:"Ding Ning",
-                      victorias:"2011-2018",
-                      jjoo:"4",
-                      cdm:"3",
-                      cm:"1",
-                      total:"8",
-                    },
-                    {
-                      name:"Deng Yaping",
-                      victorias:"1991-1997",
-                      jjoo:"5",
-                      cdm:"1",
-                      cm:"1",
-                      total:"7"
-                    }
                   ]
                 }
               ],

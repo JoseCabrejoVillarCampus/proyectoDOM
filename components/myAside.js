@@ -10,8 +10,7 @@ export default{
 
         //enviamos un mensaje el worker
         ws.postMessage({module: "showAside", data : this.nav});
-        ws.postMessage({module: "cards", data : this.nav});
-        ws.postMessage({module: "list", data : this.nav});
+
         let id = ["#about"];
         let count = 0;
         //esto es lo que llega del worker

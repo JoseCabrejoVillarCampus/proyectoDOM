@@ -207,13 +207,19 @@ h1, h2, h3, h4, h5, h6 {
     border: 3px solid #ffffff;
   }
 
-#links, .cap, .table{
+#links, .cap, .table, .ten{
   color: #62a0ea;
 }
-
+.ten{
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-size: 4.5rem;
+}
+#pa{
+  text-shadow: 0.1em 0.1em 0.2em black
+}
 .titleaside {
   color: #706d6d;
-  text-shadow: #141313;
+  
 }
 .head, .lis{
   color:#62a0ea;
