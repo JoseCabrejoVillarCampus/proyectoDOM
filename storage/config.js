@@ -120,7 +120,6 @@ export default{
     },
     dataMyBanner(){
         localStorage.setItem("myBanner", JSON.stringify({
-            image: "../img/two-tennis-rackets-and-ball-against-net-on-table-P37HCQZ-e1602572035813.jpg",
             comp:{
                 title: "Tenis de mesa",
                 paragraph:`El tenis de mesa (también conocido como ping-pong o pimpón) es un deporte de raqueta que se disputa entre dos jugadores o dos parejas (dobles). Es un deporte olímpico desde Seúl 1988, y el deporte con mayor número de practicantes, con 40 millones de jugadores compitiendo en todo el mundo.1​2​3​ Según un estudio realizado por la NASA, es el deporte más complicado que un ser humano puede practicar a nivel profesional.`,
@@ -129,6 +128,217 @@ export default{
                     href:"https://es.wikipedia.org/wiki/Tenis_de_mesa"
                     },
             },
+        }))
+    },
+    dataMyFooter(){
+        localStorage.setItem("myFooter", JSON.stringify({
+            foot:[
+                {
+                    paragraph:"Blog PingPong",
+                    paragraph2:"Bootstrap",
+                    paragraph3:"Jose Cabrejo",
+                    paragraph4:"Back to top",
+                    href:"https://getbootstrap.com/",
+                    href2:"https://twitter.com/mdo",
+                    href3:"",
+                    href4:""
+                }
+            ],
+        }))
+    },
+    dataMyAside(){
+        localStorage.setItem("myAside", JSON.stringify({
+            nav:[
+                {
+                    title:"Un Poco de Historia",
+                    paragraph:"Nació en la década de 1870 en Inglaterra como una derivación del tenis. La historia de este deporte está marcada por una serie de evoluciones técnicas, como la naturaleza de los revestimientos de las raquetas, aumento del tamaño de la pelota, la reducción del número de tantos por juego o la introducción y posterior prohibición del uso de pegamentos rápidos.",
+                },
+                {
+                    title:"Principales Torneos",
+                    link:[
+                        {
+                            name:"Abierto de Alemania",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Argentina",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Alemania",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Australia",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Austria",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Bielorussia",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Belgica",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Brasil",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Bulgaria",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Chile",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de China",
+                            href:"#",
+                        },
+                        {
+                            name:"Abierto de Cheqia",
+                            href:"#",
+                        }
+        
+                    ],
+                },
+                {
+                    title:"WTT Cup Finals",
+                    link:[
+                        {
+                            name:"Fan Zhendong 2021",
+                            href:"#",
+                        },
+                        {
+                            name:"Wang Chuqin 2022 ",
+                            href:"#",
+                        },
+                        {
+                            name:"Chen Meng 2020",
+                            href:"#",
+                        }
+        
+                    ],
+                }
+            ],
+        }))
+    },
+    dataMyPost(){
+        localStorage.setItem("myPost", JSON.stringify({
+            post:[{
+                article:"Mondial Ping - Men's Singles",
+                title:"Ma Long-Koki Niwa",
+                date:"2013 World Table Tennis Championships",
+                paragraph:`English: 2013 World Table Tennis Championships, Paris. Men's Singles Round 4. Ma Long vs Koki Niwa.
+                Français : Championnats du monde de tennis de table, Paris. Huitième de finale simple homme. Ma Long vs Koki Niwa.`,
+                image:"img/table-tennis-ping-pong-passion-sport.jpg",
+                btn:{
+                    name:"Continue Reading",
+                    href:"#"
+                }
+              },
+              {
+                article:"Swedish table tennis player",
+                title:"Jan-Ove Waldner",
+                date:"14 de noviembre de 2012",
+                paragraph:`English: Swedish table tennis player representing Spårvägen BTK.`,
+                image:"img/Jan-Ove_Waldner.JPG",
+                btn:{
+                    name:"Continue Reading",
+                    href:"#"
+                }
+              },
+              {
+                article:"Summer Olympics",
+                title:"Riocentro table tennis venuet",
+                date:"6 de agosto de 2016",
+                paragraph:`Archivo:Riocentro table tennis venue 2016 Summer Olympics 06.08.2016.`,
+                image:"img/Riocentro_table_tennis_venue_2016_Summer_Olympics_06.08.2016.jpg",
+                btn:{
+                    name:"Continue Reading",
+                    href:"#"
+                }
+              },
+              {
+                article:"Dimensiones",
+                title:"Mesa de tenis de mesa",
+                date:"17:02 16 oct 2005",
+                paragraph:`Diagrama que muestra las dimensiones de una mesa de tenis de mesa..`,
+                image:"img/Mesa_de_tenis_de_mesa.jpg",
+                btn:{
+                    name:"Continue Reading",
+                    href:"#"
+                }
+              },
+              {
+                article:"Ping Pong Vintage",
+                title:`juego de Ping-Pong de principios del siglo XX`,
+                date:"Siglo XX",
+                paragraph:"Museo de los Niños de Indianápolis, comercializado por la empresa Parker Brothers",
+                image:"img/Ping-Pong_2.jpg",
+                btn:{
+                    name:"Continue Reading",
+                    href:"#"
+                }
+              }
+              ],
+        }))
+    },
+    dataMyTable(){
+        localStorage.setItem("myTable", JSON.stringify({
+            table:[
+                {
+                  title:"CAMPEONES",
+                  paragraph:"En la siguiente tabla se muestran los jugadores —hombres y mujeres— que han conseguido al menos cinco victorias individuales en sus participaciones en dichas competiciones: ",
+                  camp:[
+                    {
+                      name:"Ma Long",
+                      victorias:"2008-2019",
+                      jjoo:"4",
+                      cdm:"2",
+                      cm:"5",
+                      total:"11"
+                    },
+                    {
+                      name:"Wang Nan",
+                      victorias:"1997-2007",
+                      jjoo:"3",
+                      cdm:"4",
+                      cm:"2",
+                      total:"9"
+                    },
+                    {
+                      name:"Liu Shiwen",
+                      victorias:"2009-2019",
+                      jjoo:"1",
+                      cdm:"5",
+                      cm:"3",
+                      total:"9"
+                    },
+                    {
+                      name:"Ding Ning",
+                      victorias:"2011-2018",
+                      jjoo:"4",
+                      cdm:"3",
+                      cm:"1",
+                      total:"8",
+                    },
+                    {
+                      name:"Deng Yaping",
+                      victorias:"1991-1997",
+                      jjoo:"5",
+                      cdm:"1",
+                      cm:"1",
+                      total:"7"
+                    }
+                  ]
+                }
+              ],
         }))
     }
 }

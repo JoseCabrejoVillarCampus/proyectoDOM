@@ -1,53 +1,10 @@
+import config from "../storage/config.js";
 export default{
-    table:[
-        {
-          title:"CAMPEONES",
-          paragraph:"En la siguiente tabla se muestran los jugadores —hombres y mujeres— que han conseguido al menos cinco victorias individuales en sus participaciones en dichas competiciones: ",
-          camp:[
-            {
-              name:"Ma Long",
-              victorias:"2008-2019",
-              jjoo:"4",
-              cdm:"2",
-              cm:"5",
-              total:"11"
-            },
-            {
-              name:"Wang Nan",
-              victorias:"1997-2007",
-              jjoo:"3",
-              cdm:"4",
-              cm:"2",
-              total:"9"
-            },
-            {
-              name:"Liu Shiwen",
-              victorias:"2009-2019",
-              jjoo:"1",
-              cdm:"5",
-              cm:"3",
-              total:"9"
-            },
-            {
-              name:"Ding Ning",
-              victorias:"2011-2018",
-              jjoo:"4",
-              cdm:"3",
-              cm:"1",
-              total:"8",
-            },
-            {
-              name:"Deng Yaping",
-              victorias:"1991-1997",
-              jjoo:"5",
-              cdm:"1",
-              cm:"1",
-              total:"7"
-            }
-          ]
-        }
-      ],
+    
       show(){
+        
+        config.dataMyTable();
+        Object.assign(this, JSON.parse(localStorage.getItem("myTable")))
         const ws = new Worker("storage/wsMyTable.js",{type:"module"});
 
         //enviamos un mensaje el worker

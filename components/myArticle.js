@@ -1,7 +1,6 @@
 import config from "../storage/config.js";
 export default{
     
-    
     show(){
 
         config.dataMyArticle();

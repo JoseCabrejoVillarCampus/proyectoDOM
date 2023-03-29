@@ -1,17 +1,11 @@
+import config from "../storage/config.js";
 export default{
-    foot:[
-        {
-            paragraph:"Blog PingPong",
-            paragraph2:"Bootstrap",
-            paragraph3:"Jose Cabrejo",
-            paragraph4:"Back to top",
-            href:"https://getbootstrap.com/",
-            href2:"https://twitter.com/mdo",
-            href3:"",
-            href4:""
-        }
-    ],
+    
     show(){
+
+        config.dataMyFooter();
+        Object.assign(this, JSON.parse(localStorage.getItem("myFooter")));
+        
         const ws = new Worker("storage/wsMyFooter.js",{type:"module"});
 
         //enviamos un mensaje el worker
