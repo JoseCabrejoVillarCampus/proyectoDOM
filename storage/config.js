@@ -120,7 +120,7 @@ export default{
     },
     dataMyBanner(){
         localStorage.setItem("myBanner", JSON.stringify({
-            image: "/img/two-tennis-rackets-and-ball-against-net-on-table-P37HCQZ-e1602572035813.jpg",
+            image: "./img/two-tennis-rackets-and-ball-against-net-on-table-P37HCQZ-e1602572035813.jpg",
             comp:{
             title: "Tenis de mesa",
             paragraph:`El tenis de mesa (también conocido como ping-pong o pimpón) es un deporte de raqueta que se disputa entre dos jugadores o dos parejas (dobles). Es un deporte olímpico desde Seúl 1988, y el deporte con mayor número de practicantes, con 40 millones de jugadores compitiendo en todo el mundo.1​2​3​ Según un estudio realizado por la NASA, es el deporte más complicado que un ser humano puede practicar a nivel profesional.`,
